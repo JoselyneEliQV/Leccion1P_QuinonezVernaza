@@ -2,7 +2,22 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
+      "name": "Attach to Edge",
+      "port": 9222,
+      "request": "attach",
+      "type": "msedge",
+      "webRoot": "${workspaceFolder}/app.js"
+    },
+    {
+    "name": "Launch Microsoft Edge",
+    "type": "msedge",
+    "request": "launch",
+    "url": "http://localhost:4200",
+    "webRoot": "${workspaceFolder}"
+  },
+     {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",

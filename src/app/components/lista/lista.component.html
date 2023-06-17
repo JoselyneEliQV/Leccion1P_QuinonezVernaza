@@ -1,0 +1,62 @@
+<div class="container">
+  <h2>Lista de Elementos</h2>
+
+  <div class="form-group">
+    <label for="columna1">Nombre:</label>
+    <input id="columna1" type="text" [(ngModel)]="nombre" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="columna2">Apellido:</label>
+    <input id="columna2" type="text" [(ngModel)]="apellido" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="columna3">Cuidad:</label>
+    <input id="columna3" type="text" [(ngModel)]="cuidad" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="columna4">Cedula:</label>
+    <input id="columna4" type="text" [(ngModel)]="cedula" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="columna5">Fecha:</label>
+    <input id="columna5" type="date" [(ngModel)]="fecha" class="form-control">
+  </div>
+
+  <button (click)="agregarElemento()" class="btn btn-primary">Agregar Elemento</button>
+
+  <br><br>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cuidad</th>
+        <th>Cedula</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elemento of elementos">
+        <td>{{ elemento.nombre }}</td>
+        <td>{{ elemento.apellido }}</td>
+        <td>{{ elemento.cuidad }}</td>
+        <td>{{ elemento.cedula }}</td>
+        <td>{{ elemento.fecha | date }}</td>
+        <td><button (click)="eliminarElemento(elemento)" class="btn btn-danger">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Elementos Eliminados</h2>
+  <ul>
+    <li *ngFor="let elemento of elementosEliminados">
+      {{ elemento.nombre }} - {{ elemento.apellido }} - {{ elemento.cuidad }} - {{ elemento.cedula }} - {{ elemento.fecha | date }}
+    </li>
+  </ul>
+</div>
